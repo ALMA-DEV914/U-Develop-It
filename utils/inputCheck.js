@@ -2,7 +2,11 @@
 // e.g., inputCheck(object, 'prop1', 'prop2', 'etc')
 
 module.exports = function(obj, ...props) {
-  const errors = [];
+  const errors =inputCheck(req.body, 'party_id');
+  if(errors){
+    resizeBy.status(400).json({error: errors});
+    return;
+  }
 
   props.forEach((prop) => {
     // if property is blank or doesn't exist, add to errors array
